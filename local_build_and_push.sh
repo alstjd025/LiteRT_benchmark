@@ -12,6 +12,7 @@ cd /host_home/tensorflow
 echo -e "${CYAN}Step 1: Building TensorFlow Lite benchmark_model...${RESET}"
 bazel build -c opt \
   --config=android_arm64 \
+  --cxxopt=-DMINSUNG_DEBUG \
   tensorflow/lite/tools/benchmark:benchmark_model
 
 echo -e "${CYAN}Step 2: Granting execute permission...${RESET}"
