@@ -13,7 +13,7 @@ echo -e "${CYAN}Step 1: Building TensorFlow Lite benchmark_model...${RESET}"
 bazel build -c opt \
   --config=android_arm64 \
   --cxxopt=-DMINSUNG_DEBUG \
-  --cvvopt=-DMINSUNG_SUBGRAPH_LATENCY \
+  --cxxopt=-DMINSUNG_SUBGRAPH_LATENCY \
   tensorflow/lite/tools/benchmark:benchmark_model
 
 echo -e "${CYAN}Step 2: Granting execute permission...${RESET}"
