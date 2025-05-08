@@ -7,7 +7,7 @@ RESET="\e[0m"
 
 # Step 1, 2, 3: /home/tensorflow 디렉토리에서 실행
 echo -e "${CYAN}Step 1: Changing directory to /home/tensorflow... ${RESET}"
-cd /host_home/tensorflow || { echo -e "${RED}Failed to change directory.${RESET}"; exit 1; }
+cd /host_home/Mercury || { echo -e "${RED}Failed to change directory.${RESET}"; exit 1; }
 
 echo -e "${CYAN}Step 1: Building TensorFlow Lite benchmark_model...${RESET}"
 
