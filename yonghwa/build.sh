@@ -5,13 +5,12 @@ YELLOW="\e[33m"
 RED="\e[31m"
 RESET="\e[0m"
 
-echo -e "${CYAN}Step 1: Changing directory to /home/tensorflow... ${RESET}"
+echo -e "${CYAN}Step 1: Changing directory to /host_dir/tensorflow... ${RESET}"
 cd /host_dir/tensorflow || { echo -e "${RED}Failed to change directory.${RESET}"; exit 1; }
 
 echo -e "${CYAN}Step 1: Building TensorFlow Lite simple_test binary..${RESET}"
 
-BUILD_CMD="bazel build -c opt \
-  --config=android_arm64 tensorflow/lite/examples/simple_test:simple_test"
+BUILD_CMD="bazel build -c opt  --config=android_arm64 tensorflow/lite/examples/simple_test:simple_test"
 
 eval $BUILD_CMD
 
