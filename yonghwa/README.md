@@ -3,11 +3,10 @@
 ## Starting docker continer ##
 1. Start the tflite docker container
    You can find a running docker container named tflite-builder with `docker ps` command.
-   Command `docker exec -it container_name /bin/bash`
-   (container name could be found with  `docker ps`)
+   Command `docker exec -it android_tflite /bin/bash`
 
 ## Checking tensorflow lite example source code(outside docker) ##
-2.  Goto simple_test folder in tensorflow folder with `cd /host_dir/tensorflow/tensorflow/lite/examples/simple_test`.
+2.  Goto simple_test folder in tensorflow source directory with `cd /host_dir/tensorflow/tensorflow/lite/examples/simple_test`.
     You can find simple_example.cc, which is the simple source code of tensorflow lite.
 
 ## Building binary(in docker) ##
@@ -20,6 +19,7 @@
    Make sure that your phone is connected via USB DEBUGGING mode.
 
 ## Run binary(on phone) ##
-5. Run binary in adb with .tflite model by `./simple_test {model_name}.tflite, {interation_time} {verbose print 0/1}`.
+5. Run binary at /tmp directory in adb with .tflite model by 
+   `./simple_test {model_name}.tflite, {interation_time} {verbose print 0/1}`.
 
 Feel free to modify the source and ask me if you have problem anytime.
