@@ -7,7 +7,7 @@ RESET="\e[0m"
 
 # Step 1, 2, 3: /home/tensorflow 디렉토리에서 실행
 echo -e "${CYAN}Step 1: Changing directory to /home/tensorflow... ${RESET}"
-cd /host_dir/Mercury || { echo -e "${RED}Failed to change directory.${RESET}"; exit 1; }
+cd /host_home/Mercury || { echo -e "${RED}Failed to change directory.${RESET}"; exit 1; }
 
 echo -e "${CYAN}Step 1: Building TensorFlow Lite benchmark_model...${RESET}"
 
@@ -33,11 +33,11 @@ echo -e "${CYAN}Step 2: Granting execute permission...${RESET}"
 chmod +x bazel-bin/tensorflow/lite/examples/test/test
 
 echo -e "${CYAN}Step 3: Moving binary to target directory...${RESET}"
-mv bazel-bin/tensorflow/lite/examples/test/test /host_dir/LiteRT_benchmark/
+mv bazel-bin/tensorflow/lite/examples/test/test /host_home/LiteRT_benchmark/
 
 # Step 4, 5: /host_home/LiteRT_benchmark 디렉토리에서 실행
 echo -e "${CYAN}Step 4: Changing directory to /host_dir/LiteRT_benchmark...${RESET}"
-cd /host_dir/LiteRT_benchmark || { echo -e "${RED}Failed to change directory.${RESET}"; exit 1; }
+cd /host_home/LiteRT_benchmark || { echo -e "${RED}Failed to change directory.${RESET}"; exit 1; }
 
 echo -e "${CYAN}Step 4: Committing changes to Git...${RESET}"
 git commit -a -m "binary push"
