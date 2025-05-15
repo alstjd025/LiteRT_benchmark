@@ -14,7 +14,8 @@ echo -e "${CYAN}Step 1: Building TensorFlow Lite benchmark_model...${RESET}"
 # 기본 빌드 명령어
 BUILD_CMD="bazel build -c opt \
   --config=android_arm64 \
-  --cxxopt=-DMINSUNG_DEBUG"
+  --cxxopt=-DMINSUNG_DEBUG \
+  --cxxopt=-DCL_DELEGATE_NO_GL"
 
 # 추가 인자들을 모두 --cxxopt=-D<ARG> 형태로 추가
 for macro in "$@"; do
